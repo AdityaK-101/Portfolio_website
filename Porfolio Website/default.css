@@ -174,9 +174,9 @@ h6 { font-size: 16px;}
 	margin:0 auto;
 
 	height: 190px;
-	width: 190px;
-	object-fit: cover;
-	border:2px solid var(--borderColor);
+	width: 200px;
+	object-fit: contain;
+	border:3px solid var(--borderColor);
 }
 
 
