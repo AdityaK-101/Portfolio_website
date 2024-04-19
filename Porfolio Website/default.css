@@ -173,8 +173,8 @@ h6 { font-size: 16px;}
 	display: block;
 	margin:0 auto;
 
-	height: 200px;
-	width: 200px;
+	height: 190px;
+	width: 190px;
 	object-fit: cover;
 	border:2px solid var(--borderColor);
 }
