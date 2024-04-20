@@ -61,7 +61,7 @@
 							<div id="corner-tl" class="corner"></div>
 							<div id="corner-tr" class="corner"></div>
 							<h3>What I Do</h3>
-							<p>I am Coding enthusiast,I like learning about new technolgy</p>
+							<span id="element"></span>
 							<div id="corner-br" class="corner"></div>
 							<div id="corner-bl" class="corner"></div>
 						</div>
@@ -193,5 +193,16 @@
 	</section> 
 
 	<script type="text/javascript" src="script.js"></script>
+	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	  <!-- Setup and start animation! -->
+	<script>
+		var typed = new Typed('#element', {
+		strings: ['I am Coding enthusiast.     I like learning about new technolgy.'],
+		typeSpeed: 50,
+		loop: true,
+		loopCount: 2,
+		backSpeed: 50,
+		});
+	</script>  
 </body>
 </html>
