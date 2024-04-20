@@ -12,22 +12,6 @@
 
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link id="theme-style" rel="stylesheet" type="text/css" href="">
-
-	<script>
-		if ('scrollRestoration' in history) {
-			history.scrollRestoration = 'manual';
-		}
-	
-		window.onload = function() {
-			if (localStorage.getItem('scrollPosition')) {
-				window.scrollTo(localStorage.getItem('scrollPosition'));
-			}
-		};
-	
-		window.onbeforeunload = function() {
-			localStorage.setItem('scrollPosition', window.scrollY);
-		};
-	</script>
 </head>
 <body>
 
