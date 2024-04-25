@@ -13,43 +13,13 @@
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link id="theme-style" rel="stylesheet" type="text/css" href="">
 
-	<script src="https://apis.google.com/js/api.js"></script>
 	<script>
-		function handleFormSubmit(event) {
-		event.preventDefault();
-
-		// Get the form data
-		var name = document.querySelector('input[name="name"]').value;
-		var subject = document.querySelector('input[name="subject"]').value;
-		var email = document.querySelector('input[name="email"]').value;
-		var message = document.querySelector('textarea[name="message"]').value;
-
-		// Set the range and values for the new row
-		var range = 'Sheet1!A:D';
-		var values = [[name, subject, email, message]];
-
-		// Send the data to the Google Sheets API
-		gapi.client.sheets.spreadsheets.values.append({
-			spreadsheetId: '1cGiyPawGqXhkko0BxAWQq3244490zGhb6cv7dEyMrrw',
-			range: range,
-			valueInputOption: 'RAW',
-			insertDataOption: 'INSERT_ROWS',
-			resource: {
-			values: values
-			}
-		}).then(function(response) {
-			// Clear the form fields
-			document.querySelector('input[name="name"]').value = '';
-			document.querySelector('input[name="subject"]').value = '';
-			document.querySelector('input[name="email"]').value = '';
-			document.querySelector('textarea[name="message"]').value = '';
-
-			// Show a success message
-			alert('Message sent successfully!');
+		// Clear the response block after submitting the form
+		document.querySelector('#contact-form').addEventListener('submit', function() {
+		  setTimeout(function() {
+			document.querySelector('.w-form-done').style.display = 'none';
+		  }, 2000);
 		});
-		}
-
-		document.querySelector('#contact-form').addEventListener('submit', handleFormSubmit);
 	</script>
 
 </head>
@@ -212,6 +182,7 @@
 				<textarea class="input-field" name="message"></textarea>
 
 				<input id="submit-btn" type="submit" value="Send" class="submit-btn">
+
 			</form>
 		
 		</div>
