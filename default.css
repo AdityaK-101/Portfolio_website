@@ -135,6 +135,7 @@ h6 { font-size: 16px;}
 	border-bottom: 1px solid var(--borderColor);
 	overflow: auto;
     padding: 60px 0; /* Increased padding */
+    scroll-margin-top: 2em; /* Add scroll margin to account for any fixed elements */
 }
 
 .s2 { /* s2 specific if needed, e.g., for alternate background */
@@ -151,7 +152,7 @@ h6 { font-size: 16px;}
 	display: grid;
 	text-align: center;
 	align-content: center;
-	min-height: 15em; /* Increased height */
+	min-height: 8em; /* Reduced from 15em to 8em */
 }
 
 .intro-wrapper{
@@ -590,4 +591,9 @@ h6 { font-size: 16px;}
     #navigation a {
         padding: 10px; /* Larger touch targets for nav links */
     }
+}
+
+/* Add specific scroll margins for sections with IDs */
+#education, #experience, #projects, #contact {
+    scroll-margin-top: 2em;
 }
