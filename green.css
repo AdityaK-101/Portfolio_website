@@ -1,19 +1,13 @@
-:root{
-	--mainColor:#606B56;
-	--secondaryColor:#515a48;
-
-	--borderColor:#161914;
-
-	--mainText:#fff;
-	--secondaryText:#eeeeee;
-
-	--themeDotBorder:#FFF;
-
-	--previewBg:rgb(81, 90, 72, 0.8);
-	--previewShadow:#2a2f25;
-
-
-	--buttonColor:#669966;
-
-
+:root {
+    --mainColor: #f0fff4; /* Very light, desaturated green (mint cream) */
+    --secondaryColor: #ffffff;
+    --borderColor: #d4f0df; /* Light green border */
+    --mainText: #2e4537; /* Dark green-grey text */
+    --secondaryText: #52665A; /* Medium green-grey text */
+    --accentColor: #00692c; /* A calm, deeper green for accents */
+    --themeDotBorder: #2e4537;
+    --previewBg: rgba(220, 245, 230, 0.85);
+    --previewShadow: rgba(0, 105, 44, 0.06);
+    --buttonColor: var(--accentColor);
+    --buttonTextColor: #ffffff;
 }
