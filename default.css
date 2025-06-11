@@ -109,7 +109,7 @@
 }
 
 .modal-title {
-    color: #f8f9fa !important;
+    color: #f8f9fa;
     margin: 0;
     font-size: 2em;
     border-bottom: 2px solid var(--mainColor);
