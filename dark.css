@@ -1,0 +1,100 @@
+/* dark.css */
+:root {
+    --mainColor: #1a1a1a;
+    --secondaryColor: #242424;
+    --borderColor: #383838; /* Made slightly lighter for better definition on dark */
+    --mainText: #e0e0e0;
+    --secondaryText: #b0b0b0; /* Made slightly brighter for better readability */
+
+    /* Accent color - keeping the blue from default, assess if it needs change */
+    /* --accentColor: #007bff; */ /* No need to redeclare if default is fine */
+
+    --themeDotBorder: #e0e0e0; /* Light border for theme dots for contrast */
+
+    /* Background for elements like the preview box or cards, using secondaryColor */
+    --previewBg: var(--secondaryColor);
+
+    /* Shadows might need adjustment in dark mode.
+       This could be a darker, more subtle shadow or a different approach.
+       Using a slightly more opaque black for subtlety. */
+    --previewShadow: rgba(0, 0, 0, 0.2);
+
+    /* Button colors - ensure they remain consistent or adapt as needed */
+    /* --buttonColor: var(--accentColor); */ /* Assuming default accent is used */
+    /* --buttonTextColor: #ffffff; */ /* Assuming default button text is used */
+
+    /* Specific adjustments for dark mode */
+    --imageFilterInDark: brightness(0.8) contrast(1.1); /* Example to tone down bright images */
+}
+
+/* Apply image filter to common image elements in dark mode */
+.thumbnail,
+#profile_pic,
+#modal-image { /* Added #profile_pic and #modal-image */
+    filter: var(--imageFilterInDark);
+}
+
+/* Ensure links are clearly visible against dark backgrounds */
+a {
+    /* color: var(--accentColor); /* Already set globally, but ensure it has good contrast */
+    /* text-decoration-color: var(--accentColor); /* If using underline */
+}
+a:hover {
+    /* color: #3395ff; */ /* Potentially a slightly brighter or modified accent on hover */
+}
+
+/* Input fields in dark mode */
+.input-field {
+    background-color: var(--secondaryColor); /* Darker background for inputs */
+    color: var(--mainText); /* Light text in inputs */
+    border-color: var(--borderColor); /* Consistent border */
+}
+.input-field:focus {
+    border-color: var(--accentColor); /* Accent color for focus */
+    box-shadow: 0 0 0 2px rgba(0,123,255,.35); /* Adjusted focus ring for dark */
+}
+
+/* Ensure profile pic border is visible */
+#profile_pic {
+    border-color: var(--borderColor);
+}
+#profile_pic:hover {
+    border-color: var(--accentColor); /* Keep accent on hover */
+}
+
+/* Theme dots themselves in dark mode */
+#light-mode { background-color: #f8f9fa; } /* Light mode dot remains light */
+#blue-mode { background-color: #3b82f6; } /* Example for blue dot color in dark */
+#green-mode { background-color: #10b981; } /* Example for green dot color in dark */
+#purple-mode { background-color: #8b5cf6; } /* Example for purple dot color in dark */
+/* A new dot for dark mode will be added later via HTML/JS and styled here */
+
+/* Skills list items */
+#skills li {
+    background-color: var(--secondaryColor);
+    border-color: var(--borderColor);
+    color: var(--mainText); /* Ensure skill text is readable */
+}
+#skills li:hover {
+    background-color: var(--borderColor); /* Darken slightly on hover */
+    border-color: var(--accentColor);
+}
+
+/* Modal content in dark mode */
+.modal-content {
+    background-color: var(--mainColor); /* Should pick up the dark main color */
+    color: var(--mainText); /* Should pick up the dark text color */
+    border-color: var(--borderColor);
+}
+.close-button {
+    color: var(--secondaryText);
+}
+.close-button:hover,
+.close-button:focus {
+    color: var(--mainText);
+}
+
+/* Ensure typed.js cursor is visible */
+.typed-cursor {
+    color: var(--mainText);
+}

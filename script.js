@@ -36,6 +36,10 @@ function setTheme(mode){
 		document.getElementById('theme-style').href = 'purple.css'
 	}
 
+	if(mode == 'dark'){
+		document.getElementById('theme-style').href = 'dark.css'
+	}
+
 	localStorage.setItem('theme', mode)
 }
 
