@@ -39,7 +39,7 @@
 .modal-content {
     background-color: var(--mainText);
     margin: 3% auto;
-    padding: 30px;
+    padding: 0px 30px 30px 30px;
     width: 90%;
     max-width: 1200px;
     border-radius: 10px;
@@ -69,11 +69,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .modal-media {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 0px;
 }
 
 .modal-image {
@@ -85,7 +89,6 @@
 }
 
 .modal-video {
-    margin-top: 20px;
     width: 100%;
     aspect-ratio: 16/9;
     background-color: #000;
@@ -106,11 +109,13 @@
 }
 
 .modal-title {
-    color: var(--mainColor);
+    color: #ff6600 !important;
     margin: 0;
     font-size: 2em;
     border-bottom: 2px solid var(--mainColor);
     padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: left;
 }
 
 .modal-description-container,
@@ -123,7 +128,7 @@
 
 .modal-description-container h3,
 .modal-tech-container h3 {
-    color: var(--mainColor);
+    color: #f8f9fa;
     margin: 0 0 15px 0;
     font-size: 1.3em;
 }
@@ -328,9 +333,13 @@ h6 { font-size: 16px;}
 	border-radius: 50%; /* Circular profile picture */
 	border: 3px solid var(--borderColor);
     transition: border-color 0.2s ease-in-out;
+    outline: none !important;
+    box-shadow: none !important;
 }
-#profile_pic:hover {
-    border-color: var(--accentColor);
+#profile_pic:hover, #profile_pic:focus, #profile_pic:active {
+    border-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 #theme-options-wrapper{
@@ -422,16 +431,35 @@ h6 { font-size: 16px;}
 }
 
 
-.social-links{
-	display: grid;
-	align-content: center;
-	text-align: center;
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 20px;
+    padding-left: 100px;  /* Added padding to move content right */
 }
-#social_img{ display: none; } /* Remove image, use text/icons */
+
+.social-links img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+}
+
+.social-links h3 {
+    margin-bottom: 15px;
+    color: #f8f9fa;
+}
+
 .social-links a {
-    margin: 5px 0;
-    font-size: 16px;
+    color: #17a2b8;
+    text-decoration: none;
+    margin-bottom: 0px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #17a2b8;
+    text-decoration: underline;
 }
 
 .post-wrapper{
@@ -712,4 +740,9 @@ h6 { font-size: 16px;}
 /* Add specific scroll margins for sections with IDs */
 #education, #experience, #projects, #contact {
     scroll-margin-top: 2em;
+}
+
+/* When both image and video are hidden, adjust the grid */
+.modal-grid:has(.modal-media:empty) {
+    grid-template-columns: 1fr;
 }

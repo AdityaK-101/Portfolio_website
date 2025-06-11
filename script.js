@@ -43,30 +43,30 @@ const openModalButtons = document.querySelectorAll('.open-modal-button');
 // Project data
 const projectData = {
     'post1': {
-        title: 'Calculator in Python',
-        description: 'A sophisticated calculator application built with Python, featuring a clean and intuitive user interface. The calculator supports basic arithmetic operations, scientific calculations, and includes error handling for invalid inputs.',
-        image: 'Images/calculator-dash.png',
+        title: 'AI Coding Tutor application',
+        description: '<ul><li>Built an interactive coding tutor using Python, Streamlit, and OpenRouter Mistral API (all free resources)</li><li>Features modules for chat-based code help, quizzes, and learning resources</li><li>Designed for real-time assistance and personalized programming roadmaps</li><li>Enhances coding education through interactive learning</li></ul>',
+        image: 'Images/AItutor1.png',
         video: 'Images/calculator-vid.mp4',
-        technologies: ['Python', 'Tkinter', 'Object-Oriented Programming']
+        technologies: ['Python', 'Streamlit', 'MongoDB', 'OpenRouter Mistral API', 'SQL']
     },
     'post2': {
-        title: 'Rock-Paper-Scissors',
-        description: 'An interactive implementation of the classic Rock-Paper-Scissors game. Features include score tracking, animated results, and a user-friendly interface. The game implements computer AI for challenging gameplay.',
+        title: 'GPS Outlier detection',
+        description: '<ul><li>Developed a GPS anomaly detection system using Z-Score, Isolation Forest, DBSCAN, and Random Forest, improving vehicle trajectory accuracy by 84% .</li><li>Built modules for data preprocessing, path smoothing, and map visualization using pandas, scikit-learn, geopandas, and Dash/Folium.</li></ul>',
         image: 'Images/rock-paper-s-top.png',
         video: 'Images/rock-paper-s-vid.mov',
-        technologies: ['Python', 'Random Module', 'Game Logic']
+        technologies: ['Python', 'Scikit-learn', 'Pandas', 'Geopandas', 'Dash/Folium']
     },
     'post3': {
-        title: 'New Project Title 3',
-        description: 'This is a placeholder for Project 3. Describe your project here.',
-        image: 'Images/calculator-dash.png',
-        technologies: ['Tech A', 'Tech B']
+        title: 'Excel Automation',
+        description: '<ul><li>Built an Excel automation tool using Python, significantly reducing manual report generation time by 90% through pivot table creation, fetching required information for summary and formatting with pandas and openpyxl.</li></ul>',
+        image: 'Images/Excelauto.png',
+        technologies: ['Python', 'Pandas', 'Openpyxl']
     },
     'post4': {
-        title: 'New Project Title 4',
-        description: 'This is a placeholder for Project 4. Describe your project here.',
-        image: 'Images/rock-paper-s-top.png',
-        technologies: ['Tech C', 'Tech D']
+        title: 'Portfolio Website',
+        description: '<ul><li>Designed and developed a personal portfolio website using HTML, CSS, and JavaScript to showcase projects, skills, and achievements.</li></ul><ul><li>Emphasized a clean layout, responsive design, and intuitive navigation to enhance user experience.</li></ul>',
+        image: 'Images/Portfolioweb.png',
+        technologies: ['HTML', 'CSS', 'JavaScript']
     }
 };
 
@@ -76,8 +76,20 @@ function openModal(projectId) {
 
     // Update modal content
     document.getElementById('modal-title').textContent = project.title;
-    document.getElementById('modal-description').textContent = project.description;
-    document.getElementById('modal-image').src = project.image;
+    document.getElementById('modal-description').innerHTML = project.description;
+    
+    // Handle image
+    const imageElement = document.getElementById('modal-image');
+    const imageContainer = document.getElementById('modal-image-container');
+    if (project.image) {
+        imageElement.src = project.image;
+        imageContainer.style.display = 'block';
+        imageElement.onerror = function() {
+            imageContainer.style.display = 'none';
+        };
+    } else {
+        imageContainer.style.display = 'none';
+    }
     
     // Update technologies list
     const techList = document.getElementById('modal-technologies');
@@ -89,6 +101,7 @@ function openModal(projectId) {
     });
 
     // Handle video content
+    const videoOuterContainer = document.getElementById('modal-video-outer-container');
     const videoContainer = document.getElementById('modal-video-container');
     videoContainer.innerHTML = ''; // Clear previous video
     
@@ -100,7 +113,13 @@ function openModal(projectId) {
         video.loop = false;
         video.muted = false;
         video.playsInline = true;
+        video.onerror = function() {
+            videoOuterContainer.style.display = 'none';
+        };
         videoContainer.appendChild(video);
+        videoOuterContainer.style.display = 'block';
+    } else {
+        videoOuterContainer.style.display = 'none';
     }
 
     // Show modal
