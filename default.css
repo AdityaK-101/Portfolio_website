@@ -689,6 +689,18 @@ h6 { font-size: 16px;}
     h2 { font-size: 28px; }
     h3 { font-size: 24px; }
     .modal-content { width: 85%; margin: 15% auto; }
+    .social-links {
+        padding-left: 0 !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    .social-links img {
+        max-width: 120px !important;
+    }
+    .about-wrapper, .main-container, .s1, .s2 {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
 }
 
 @media screen and (max-width: 480px){ /* More granular for small screens */
@@ -734,6 +746,24 @@ h6 { font-size: 16px;}
     .modal-technologies li {
         padding: 6px 12px;
         font-size: 0.8em;
+    }
+    .social-links {
+        padding-left: 0 !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+    .social-links img {
+        max-width: 80px !important;
+    }
+    .social-links h3,
+    .social-links a {
+        font-size: 1em !important;
+        text-align: center !important;
+    }
+    .about-wrapper, .main-container, .s1, .s2 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 }
 

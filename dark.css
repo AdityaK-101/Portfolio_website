@@ -118,3 +118,117 @@ a:hover {
 .typed-cursor {
     color: var(--mainText);
 }
+
+@media screen and (max-width: 1200px){
+	.main-container{
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 20px;
+    }
+    .modal-image {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 800px){
+	.intro-wrapper{
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+			'nav-wrapper'
+			'left-column'
+			'right-column'
+		;
+	}
+	.right-column{
+		justify-content: center;
+	}
+    .nav-wrapper {
+        flex-direction: column;
+        padding: 15px;
+    }
+    #navigation {
+        margin-top: 10px;
+    }
+    #navigation ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    #navigation li {
+        margin: 8px 0;
+    }
+    .dots-wrapper {
+        margin-bottom: 10px;
+    }
+    #theme-options-wrapper {
+        margin-top: 10px;
+    }
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 24px; }
+    .modal-content { width: 85%; margin: 15% auto; }
+}
+
+@media screen and (max-width: 480px){
+    .s1, .s2 {
+        padding: 40px 0;
+    }
+	#preview-shadow{
+		max-width: 100%;
+		height: auto;
+		padding: 0;
+	}
+	#preview{
+		width: 100%;
+        padding: 20px;
+	}
+    .post-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    #contact-form {
+        padding: 20px;
+    }
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+    h1 { font-size: 30px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 22px; }
+    #navigation a {
+        padding: 10px;
+    }
+    .modal-content {
+        padding: 15px;
+    }
+    .modal-title {
+        font-size: 1.5em;
+    }
+    .modal-image {
+        height: 200px;
+    }
+    .modal-technologies li {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+}
+
+#education, #experience, #projects, #contact {
+    scroll-margin-top: 2em;
+}
+
+.modal-grid:has(.modal-media:empty) {
+    grid-template-columns: 1fr;
+}
