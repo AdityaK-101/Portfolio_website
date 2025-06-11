@@ -1,19 +1,13 @@
-:root{
-	--mainColor:#46344E;
-	--secondaryColor:#382a3f;
-
-	--borderColor:#1d1520;
-
-	--mainText:#fff;
-	--secondaryText:#eeeeee;
-
-	--themeDotBorder:#FFF;
-
-	--previewBg:rgb(29, 21, 32, 0.8);
-	--previewShadow:#2b202f;
-
-
-	--buttonColor:#8534a3;
-
-
+:root {
+    --mainColor: #f8f0ff; /* Very light, desaturated purple (lavender blush variant) */
+    --secondaryColor: #ffffff;
+    --borderColor: #eadaf7; /* Light purple border */
+    --mainText: #3b2e45; /* Dark purple-grey text */
+    --secondaryText: #5e5266; /* Medium purple-grey text */
+    --accentColor: #563d7c; /* A calm, deeper purple for accents (Bootstrap purple) */
+    --themeDotBorder: #3b2e45;
+    --previewBg: rgba(240, 230, 250, 0.85);
+    --previewShadow: rgba(86, 61, 124, 0.06);
+    --buttonColor: var(--accentColor);
+    --buttonTextColor: #ffffff;
 }
