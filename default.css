@@ -134,8 +134,8 @@ h6 { font-size: 16px;}
 	background-color: var(--mainColor); /* s1 uses mainColor */
 	border-bottom: 1px solid var(--borderColor);
 	overflow: auto;
-    padding: 60px 0; /* Increased padding */
-    scroll-margin-top: 2em; /* Add scroll margin to account for any fixed elements */
+    padding: 30px 0; /* Reduced from 60px to 30px */
+    scroll-margin-top: 2em;
 }
 
 .s2 { /* s2 specific if needed, e.g., for alternate background */
@@ -152,7 +152,7 @@ h6 { font-size: 16px;}
 	display: grid;
 	text-align: center;
 	align-content: center;
-	min-height: 8em; /* Reduced from 15em to 8em */
+	min-height: 5em; /* Reduced from 8em to 5em */
 }
 
 .intro-wrapper{
