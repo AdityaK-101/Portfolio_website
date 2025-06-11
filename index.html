@@ -239,26 +239,31 @@
 			<a href=""></a>
 			<h3 style="text-align: center;">Get In Touch</h3>
 
-			<form id="contact-form" action="https://submit-form.com/ZQH6wepAz" method="POST">
+			<form id="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST">
 				<a name="contact"></a>
 
 				<label>Name</label>
-				<input class="input-field" type="text" name="name">
+				<input class="input-field" type="text" name="name" required>
 
 				<label>Subject</label>
-				<input class="input-field" type="text" name="subject">
+				<input class="input-field" type="text" name="subject" required>
 
 				<label>Email</label>
-				<input class="input-field" type="email" name="email">
+				<input class="input-field" type="email" name="email" required>
 
 				<label>Message</label>
-				<textarea class="input-field" name="message"></textarea>
+				<textarea class="input-field" name="message" required></textarea>
+
+				<!-- Honeypot to prevent spam -->
+				<input type="text" name="_honey" style="display:none">
+				
+				<!-- Disable Captcha -->
+				<input type="hidden" name="_captcha" value="false">
+				
+				<!-- Specify redirect after submission -->
+				<input type="hidden" name="_next" value="https://your-github-username.github.io/Portfolio_website/thanks.html">
 
 				<input id="submit-btn" type="submit" value="Send" class="submit-btn">
-
-				<input type="hidden" name="_redirect" value="http://127.0.0.1:5501/Porfolio%20Website/index.html?name=qe&subject=awe&email=qwe&message=qwe#contact"/>
-  				
-
 			</form>
 		
 		</div>
