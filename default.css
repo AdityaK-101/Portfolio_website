@@ -266,9 +266,10 @@ h6 { font-size: 16px;}
     transform: scale(1.1);
 }
 #light-mode{ background-color: #f8f9fa; }
-#blue-mode{ background-color: #e7f5ff; } /* Light theme colors */
+#blue-mode{ background-color: #e7f5ff; }
 #green-mode{ background-color: #e6fff0; }
 #purple-mode{ background-color: #f3eaff; }
+#dark-mode { background-color: #333333; } /* Dark grey to represent dark mode */
 
 #settings-note{
 	font-size: 13px; /* Slightly larger */
