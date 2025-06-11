@@ -35,117 +35,110 @@ function setTheme(mode){
 	localStorage.setItem('theme', mode)
 }
 
-// Modal Get Elements
-const projectModal = document.getElementById('project-modal');
-const closeModalButton = document.querySelector('.close-button');
+// Modal functionality
+const modal = document.getElementById('project-modal');
+const closeButton = document.querySelector('.close-button');
 const openModalButtons = document.querySelectorAll('.open-modal-button');
 
-// Modal Content Elements
-const modalTitle = document.getElementById('modal-title');
-const modalImage = document.getElementById('modal-image');
-const modalDescription = document.getElementById('modal-description');
-const modalTechnologies = document.getElementById('modal-technologies');
-const modalVideoContainer = document.getElementById('modal-video-container');
-
-// Dummy project data (simulating fetching from postX.html or a data structure)
+// Project data
 const projectData = {
     'post1': {
         title: 'Calculator in Python',
+        description: 'A sophisticated calculator application built with Python, featuring a clean and intuitive user interface. The calculator supports basic arithmetic operations, scientific calculations, and includes error handling for invalid inputs.',
         image: 'Images/calculator-dash.png',
-        description: 'This was a project I made in 2020 when I first learned python. The calculator program is a simple command-line application that allows users to perform basic arithmetic operations. The program is built using Python and has a simple user interface, with prompts for the user to enter numbers and operations. The program supports both positive and negative numbers and includes error handling for invalid inputs. The calculator program is a useful and practical tool for performing quick calculations.',
-        technologies: ['Python'],
-        video: '<video src="Images/calculator-vid.mp4" id="calculator-video" style="width:100%;" autoplay loop muted playsinline></video>'
+        video: 'Images/calculator-vid.mp4',
+        technologies: ['Python', 'Tkinter', 'Object-Oriented Programming']
     },
     'post2': {
         title: 'Rock-Paper-Scissors',
+        description: 'An interactive implementation of the classic Rock-Paper-Scissors game. Features include score tracking, animated results, and a user-friendly interface. The game implements computer AI for challenging gameplay.',
         image: 'Images/rock-paper-s-top.png',
-        description: 'This Python code implements a simple game of rock-paper-scissors. It prompts the user to input their choice among "rock," "paper," or "scissors" and randomly selects a choice for the computer. The program then compares the user\'s choice with the computer\'s choice and determines the winner based on the classic rules of the game. If both choices are the same, it declares a tie. Otherwise, it declares the winner as either the user or the computer, depending on the combinations of choices made. Finally, the game continues until the user decides to exit.',
-        technologies: ['Python'],
-        video: '<video src="Images/rock-paper-s-vid.mov" id="rock-paper-scissors-video" style="width:100%;" autoplay loop muted playsinline></video>' // Note: .mov might have limited browser support
+        video: 'Images/rock-paper-s-vid.mov',
+        technologies: ['Python', 'Random Module', 'Game Logic']
     },
     'post3': {
-        title: 'New Project Title 3 (Placeholder)',
-        image: 'Images/calculator-dash.png', // Placeholder image
-        description: 'This is a placeholder for Project 3. Detailed description will go here. This project showcases skills in X, Y, and Z.',
-        technologies: ['Tech A', 'Tech B'],
-        video: '' // No video for this placeholder
+        title: 'New Project Title 3',
+        description: 'This is a placeholder for Project 3. Describe your project here.',
+        image: 'Images/calculator-dash.png',
+        technologies: ['Tech A', 'Tech B']
     },
     'post4': {
-        title: 'New Project Title 4 (Placeholder)',
-        image: 'Images/rock-paper-s-top.png', // Placeholder image
-        description: 'This is a placeholder for Project 4. Detailed description will go here. It involved innovative approaches to problem-solving.',
-        technologies: ['Tech C', 'Tech D'],
-        video: '' // No video for this placeholder
+        title: 'New Project Title 4',
+        description: 'This is a placeholder for Project 4. Describe your project here.',
+        image: 'Images/rock-paper-s-top.png',
+        technologies: ['Tech C', 'Tech D']
     }
 };
 
-// Function to open the modal and populate content
 function openModal(projectId) {
-    const data = projectData[projectId];
-    if (!data) {
-        console.error('Project data not found for:', projectId);
-        return;
-    }
+    const project = projectData[projectId];
+    if (!project) return;
 
-    modalTitle.textContent = data.title;
-    modalImage.src = data.image;
-    modalImage.alt = data.title; // Set alt text for accessibility
-    modalDescription.textContent = data.description;
-
-    modalTechnologies.innerHTML = ''; // Clear previous technologies
-    data.technologies.forEach(tech => {
+    // Update modal content
+    document.getElementById('modal-title').textContent = project.title;
+    document.getElementById('modal-description').textContent = project.description;
+    document.getElementById('modal-image').src = project.image;
+    
+    // Update technologies list
+    const techList = document.getElementById('modal-technologies');
+    techList.innerHTML = '';
+    project.technologies.forEach(tech => {
         const li = document.createElement('li');
         li.textContent = tech;
-        modalTechnologies.appendChild(li);
+        techList.appendChild(li);
     });
 
-    modalVideoContainer.innerHTML = data.video || ''; // Add video if present
-
-    // If video content was added, try to set playbackRate
-    if (data.video) {
-        const videoElement = modalVideoContainer.querySelector('video');
-        if (videoElement) {
-            videoElement.playbackRate = 2.0; // Set desired playback rate e.g. 2.0 for double speed
-            videoElement.play().catch(error => console.log("Video play interrupted or failed:", error)); // Autoplay might be blocked
-        }
+    // Handle video content
+    const videoContainer = document.getElementById('modal-video-container');
+    videoContainer.innerHTML = ''; // Clear previous video
+    
+    if (project.video) {
+        const video = document.createElement('video');
+        video.src = project.video;
+        video.controls = true;
+        video.autoplay = false;
+        video.loop = false;
+        video.muted = false;
+        video.playsInline = true;
+        videoContainer.appendChild(video);
     }
 
-    projectModal.classList.add('modal-open');
+    // Show modal
+    modal.classList.add('modal-open');
 }
 
-// Function to close the modal
 function closeModal() {
-    projectModal.classList.remove('modal-open');
-    // Stop video if any was playing (important for actual video elements)
-    // Add a slight delay to allow the modal-out animation to start before clearing content
-    setTimeout(() => {
-        modalVideoContainer.innerHTML = '';
-    }, 300); // Match this delay to CSS transition duration for opacity/visibility
+    // Stop any playing video
+    const video = document.querySelector('#modal-video-container video');
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+    }
+    
+    modal.classList.remove('modal-open');
 }
 
 // Event Listeners
 openModalButtons.forEach(button => {
     button.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default anchor behavior
+        event.preventDefault();
         const projectId = this.dataset.project;
         openModal(projectId);
     });
 });
 
-if(closeModalButton) {
-    closeModalButton.addEventListener('click', closeModal);
-}
+closeButton.addEventListener('click', closeModal);
 
-// Close modal if user clicks outside of the modal content
+// Close modal when clicking outside
 window.addEventListener('click', function(event) {
-    if (event.target === projectModal) {
+    if (event.target === modal) {
         closeModal();
     }
 });
 
-// Optional: Close modal with Escape key
-window.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && projectModal.classList.contains('modal-open')) {
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.classList.contains('modal-open')) {
         closeModal();
     }
 });

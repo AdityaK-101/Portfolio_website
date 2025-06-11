@@ -54,7 +54,7 @@
 				</div>
 
 				<div class="left-column">
-					<img id="profile_pic" src="Images/profile_image.png" width="200" height="200">
+					<img id="profile_pic" src="Images/profile_image.jpg" width="200" height="200">
 					<h5 style="text-align: center;line-height: 0;">Personalize Theme</h5>
 
 					<div id="theme-options-wrapper">
@@ -278,37 +278,41 @@
 		</div>
 	</section> 
 
+	<!-- Project Modal -->
+	<div id="project-modal" class="modal">
+		<div class="modal-content">
+			<span class="close-button">&times;</span>
+			<div class="modal-grid">
+				<div class="modal-media">
+					<img id="modal-image" src="" alt="Project Image" class="modal-image">
+					<div id="modal-video-container" class="modal-video"></div>
+				</div>
+				<div class="modal-info">
+					<h2 id="modal-title" class="modal-title"></h2>
+					<div class="modal-description-container">
+						<h3>Description</h3>
+						<p id="modal-description" class="modal-description"></p>
+					</div>
+					<div class="modal-tech-container">
+						<h3>Tech Stack</h3>
+						<ul id="modal-technologies" class="modal-technologies"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script type="text/javascript" src="script.js"></script>
 	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 	  <!-- Setup and start animation! -->
 	<script>
 		var typed = new Typed('#element', {
-		strings: ['I am a passionate developer... I build creative solutions and love to learn new technologies.'],
+		strings: ['💻 Digital Craftsman | 🚀 Passionate about Cybersecurity AI, ML, Python | 🎓 Computer Science Student | Music'],
 		typeSpeed: 50,
 		loop: true,
 		loopCount: 2,
 		backSpeed: 50,
 		});
 	</script>  
-
-	<div id="project-modal" class="modal">
-		<div class="modal-content">
-			<span class="close-button">&times;</span>
-			<h3 id="modal-title">Project Title</h3>
-			<div id="modal-body">
-				<!-- Project details will be loaded here -->
-				<img id="modal-image" src="" alt="Project Image" style="max-width: 100%; height: auto; margin-bottom: 15px;">
-				<p id="modal-description">Project description...</p>
-				<h5>Technologies:</h5>
-				<ul id="modal-technologies">
-					<li>Tech 1</li>
-					<li>Tech 2</li>
-				</ul>
-			</div>
-			<div id="modal-video-container" style="margin-top:15px;">
-				<!-- Optional video embed here -->
-			</div>
-		</div>
-	</div>
 </body>
 </html>
