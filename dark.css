@@ -27,6 +27,26 @@
     --imageFilterInDark: brightness(0.8) contrast(1.1); /* Example to tone down bright images */
 }
 
+/* Add spacing adjustments */
+.s1, .s2 {
+    padding: 20px 0;
+    scroll-margin-top: 1em;
+}
+
+.main-container {
+    padding-top: 0;
+}
+
+.greeting-wrapper {
+    min-height: 2em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.intro-wrapper {
+    margin-top: 0;
+}
+
 /* Apply image filter to common image elements in dark mode */
 .thumbnail,
 #profile_pic,

@@ -11,3 +11,23 @@
     --buttonColor: var(--accentColor);
     --buttonTextColor: #ffffff;
 }
+
+/* Add spacing adjustments */
+.s1, .s2 {
+    padding: 20px 0;
+    scroll-margin-top: 1em;
+}
+
+.main-container {
+    padding-top: 0;
+}
+
+.greeting-wrapper {
+    min-height: 2em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.intro-wrapper {
+    margin-top: 0;
+}

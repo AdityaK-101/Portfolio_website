@@ -134,8 +134,8 @@ h6 { font-size: 16px;}
 	background-color: var(--mainColor); /* s1 uses mainColor */
 	border-bottom: 1px solid var(--borderColor);
 	overflow: auto;
-    padding: 30px 0; /* Reduced from 60px to 30px */
-    scroll-margin-top: 2em;
+    padding: 20px 0; /* Further reduced padding */
+    scroll-margin-top: 1em;
 }
 
 .s2 { /* s2 specific if needed, e.g., for alternate background */
@@ -146,13 +146,16 @@ h6 { font-size: 16px;}
 	width: 90%; /* More responsive */
 	max-width: 1100px; /* Max width */
 	margin: 0 auto;
+	padding-top: 0; /* Ensure no top padding */
 }
 
 .greeting-wrapper{
 	display: grid;
 	text-align: center;
 	align-content: center;
-	min-height: 5em; /* Reduced from 8em to 5em */
+	min-height: 2em; /* Significantly reduced height */
+	margin-top: 0; /* Remove any top margin */
+	padding-top: 0; /* Remove any top padding */
 }
 
 .intro-wrapper{
@@ -166,6 +169,7 @@ h6 { font-size: 16px;}
 		'nav-wrapper nav-wrapper'
 		'left-column right-column'
 	;
+	margin-top: 0; /* Remove any top margin */
 }
 
 .nav-wrapper{
